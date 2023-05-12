@@ -50,8 +50,6 @@ Key Features:
 * Add an app shortcut to the home screen.
 * View a chart showing the number of upcoming events by city.
 
-## App’s key features into user stories
-
 ### Feature 1: filter events by city:
 
 ___User story:
