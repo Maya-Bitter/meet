@@ -1,5 +1,7 @@
 ## **Achievement 4 Project: Meet App**
 
+### **Contents**
+
 [Objective](#Objective)
 
 [Technical Requirements](#Technical-Requirements)
@@ -148,5 +150,5 @@ as a user, i should be able to see a chart of all upcoming events of each city, 
 * When: user clicks on a city.
 * Then: a chart with the number of events in a city is served to the user
 
-[go to start](#Objective)
+[go to start](#Content)
 
