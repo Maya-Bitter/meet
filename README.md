@@ -10,8 +10,8 @@ Calendar API to fetch upcoming events.
 
 ### Feature 1: filter events by city:
 
-User story:
-as a user, I should be able to filter events by a requested city, so that I can see the list of the events taking place there. 
+___User story:
+as a user, I should be able to filter events by a requested city, so that I can see the list of the events taking place there.___
 
 ### scenario 1: when user hasn’t searched for a city, show upcoming events from all cities.
 
@@ -33,8 +33,8 @@ as a user, I should be able to filter events by a requested city, so that I can 
 
 ### Feature 2: show/hide an event's details
 
-User story:
-as a user, I should be able to show or hide details, so that I can see more or less information about an event.
+___User story:
+as a user, I should be able to show or hide details, so that I can see more or less information about an event.___
 
 ### scenario 1: an event element is collapsed by default
 
@@ -56,8 +56,8 @@ as a user, I should be able to show or hide details, so that I can see more or l
 
 ### Feature 3: specify number of events
 
-user story:
-as a user, I should be able to specify the number of the upcoming events shown, so that I can see have more or less events loaded.
+___User story:
+as a user, I should be able to specify the number of the upcoming events shown, so that I can see have more or less events loaded.___
 
 ### scenario 1: when user hasn’t specified a number, 32 is the default number
 
@@ -73,9 +73,9 @@ as a user, I should be able to specify the number of the upcoming events shown, 
 
 ### Feature 4: use the app when offline
 
-user story:
+___User story:
 as a user, I should be able to use the app offline, so that I can view 
-the events I saw when I was online.
+the events I saw when I was online.___
 
 ### scenario 1: show cached data when there’s no internet connection
 
@@ -91,8 +91,8 @@ the events I saw when I was online.
 
 ### Feature 5: data visualization
 
-user story:
-as a user, i should be able to see a chart of all upcoming events of each city, so that i can choose from different offers and plan my time. 
+___User story:
+as a user, i should be able to see a chart of all upcoming events of each city, so that i can choose from different offers and plan my time.___
 
 ### scenario 1: show a chart with the number of upcoming events in each city
 
