@@ -1,12 +1,9 @@
 ## **Achievement 4 Project: Meet App**
 
-[click on this link](#my-multi-word-header)
-
 [Objective](#Objective)
 
-[Technical Requirements](#Technica-Requirements)
+[Technical Requirements](#Technical-Requirements)
 
-[Features and Requirements](#Features-and-Requirements)
 
 ## **Objective**
 
@@ -22,8 +19,6 @@ that visualizes the popularity of event genres in the form of a pie chart.
 - Frontend: Written with JavaScript/React; hosted on GitHub Pages.
 - Backend (Server Logic): Written with Node/Express as Lambda functions (FaaS); hosted on AWS (requests come from frontend to Lambda function to data).
 - Backend (Database): Google Calendar API.
-
-### My Multi Word Header
 
 ## Technical Requirements
 
