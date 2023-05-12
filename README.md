@@ -23,6 +23,8 @@ that visualizes the popularity of event genres in the form of a pie chart.
 - Backend (Server Logic): Written with Node/Express as Lambda functions (FaaS); hosted on AWS (requests come from frontend to Lambda function to data).
 - Backend (Database): Google Calendar API.
 
+[go to start](#Contents)
+
 ## Technical Requirements
 
 * The app must be a React application.
@@ -57,6 +59,8 @@ Key Features:
 * Use the app when offline.
 * Add an app shortcut to the home screen.
 * View a chart showing the number of upcoming events by city.
+
+[go to start](#Contents)
 
 ### Feature 1: filter events by city:
 
@@ -103,6 +107,8 @@ as a user, I should be able to show or hide details, so that I can see more or l
 * Given: specific event is being expanded with its details.
 * When: the user clicks on the “hide details” button of the event.
 * Then: the details of the event are hidden.
+
+[go to start](#Contents)
 
 ### Feature 3: specify number of events
 
