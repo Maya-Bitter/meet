@@ -49,6 +49,8 @@ user.
 * The app must be covered by tests with a coverage rate >= 90%.
 * The app must be monitored using an online monitoring tool
 
+[go to start](#Contents)
+
 ## Features and Requirements
 
 Key Features:
