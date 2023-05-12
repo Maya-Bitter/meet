@@ -1,10 +1,10 @@
 ## **Achievement 4 Project: Meet App**
 
-[Objective](/Objective)
+[Objective](https://github.com/Maya-Bitter/meet#readme "Objective")
 
-[Technical Requirements](/Technical Requirements)
+[Technical Requirements](https://github.com/Maya-Bitter/meet#readme "Technical Requirements")
 
-Technical Requirements
+[Features and Requirements](https://github.com/Maya-Bitter/meet#readme "Features and Requirements")
 
 ## **Objective**
 
