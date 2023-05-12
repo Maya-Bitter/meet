@@ -15,6 +15,19 @@ that visualizes the popularity of event genres in the form of a pie chart.
 - Backend (Server Logic): Written with Node/Express as Lambda functions (FaaS); hosted on AWS (requests come from frontend to Lambda function to data).
 - Backend (Database): Google Calendar API.
 
+
+
+## Features and Requirements
+
+Key Features:
+
+* Filter events by city.
+* Show/hide event details.
+* Specify number of events.
+* Use the app when offline.
+* Add an app shortcut to the home screen.
+* View a chart showing the number of upcoming events by city.
+
 ## App’s key features into user stories
 
 ### Feature 1: filter events by city:
