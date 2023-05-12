@@ -1,13 +1,5 @@
 ## **Achievement 4 Project: Meet App**
 
-[Objectiv](https://github.com/Maya-Bitter/meet "Objectiv")
-
-[Markdown Land](https://markdown.land "Markdown Land")
-
-[Markdown Land](https://markdown.land "Markdown Land")
-
-[Markdown Land](https://markdown.land "Markdown Land")
-
 ## **Objective**
 
 To build a serverless, progressive web application (PWA) with React using a
