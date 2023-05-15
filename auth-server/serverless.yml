@@ -18,7 +18,3 @@ functions:
       - http:
           path: api/get-auth-url
           method: get
-
-  getAccessToken:
-
-  getCalendarEvents:
