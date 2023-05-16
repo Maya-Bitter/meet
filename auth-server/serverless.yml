@@ -13,7 +13,6 @@ provider:
     CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 
 functions:
-
   getAuthURL:
     handler: handler.getAuthURL
     events:
@@ -28,9 +27,9 @@ functions:
           path: api/token/{code}
           method: get
 
-    getCalendarEvents:
+  getCalendarEvents:
     handler: handler.getCalendarEvents
     events:
       - http:
-          path: api/get-event/{access_token}
+          path: api/get-events/{access_token}
           method: get
