@@ -72,7 +72,7 @@ module.exports.getAccessToken = async (event) => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials": true,
+          // "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(token),
       };
@@ -93,7 +93,7 @@ module.exports.getCalenderEvents = async (event) => {
     client_secret,
     redirect_uris[0]
   );
-  // Decode authorization code extracted from the URL query
+
   const access_token = decodeURIComponent(
     `${event.pathParameters.access_token}`
   );
@@ -123,7 +123,7 @@ module.exports.getCalenderEvents = async (event) => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials": true,
+          //  "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify({ events: results.data.items }),
       };
