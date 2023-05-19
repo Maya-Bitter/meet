@@ -10,6 +10,7 @@ class CitySearch extends Component {
     const value = event.target.value;
     this.setState({ query: value });
   };
+
   render() {
     return (
       <div className="CitySearch">
