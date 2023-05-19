@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class CitySearch extends Component {
   render() {
-    <div className="CitySearch"></div>;
+    return (
+      <div className="CitySearch">
+        <input type="text" className="city" />
+      </div>
+    );
   }
 }
 
