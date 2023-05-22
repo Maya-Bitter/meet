@@ -17,14 +17,4 @@ describe("<App /> component", () => {
   test("render CitySearch", () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
-
-  //The test function //
-
-  //test('test description', () => {
-  //  expect(someFunction()).toBe(somevalue);
-  //});
-
-  // test('render Event component with correct name', () => {
-  //   expect(Event.find('.name').text()).toBe(Events in Berlin');
-  // });
 });
