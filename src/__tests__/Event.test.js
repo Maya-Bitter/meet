@@ -12,6 +12,8 @@ describe("<Event /> component", () => {
     EventWrapper = shallow(<Event event={event} />);
   });
 
+  // tests to verify whether all the necessary elements have been rendered
+
   test("renders the componenet", () => {
     expect(EventWrapper).toBeDefined();
   });
@@ -50,7 +52,9 @@ describe("<Event /> component", () => {
     expect(detailsButton.text()).toBe("show details");
   });
 
-  test("when clicking show details button - expand details", () => {
+  // test cases to check if extra info is shown when a user clicks on a “Details” button & "hide details" button.
+
+  test("when clicking the show details button - expand details", () => {
     const detailsButton = EventWrapper.find("button.details-button");
     expect(detailsButton.text()).toBe("show details");
     expect(EventWrapper.find("h2.about")).toHaveLength(0);
@@ -60,7 +64,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.state("collapsed")).toBe(false);
   });
 
-  test("when clicking hide details button - collapse details ", () => {
+  test("when clicking the hide details button - collapse details", () => {
     const detailsButton = EventWrapper.find("button.details-button");
     expect(detailsButton.text()).toBe("hide details");
     detailsButton.simulate("click");
