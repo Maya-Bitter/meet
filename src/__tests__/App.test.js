@@ -4,6 +4,8 @@ import App from "../App";
 import EventList from "../EventList";
 import CitySearch from "../CitySearch";
 
+describe("<App /> integration", () => {});
+
 describe("<App /> component", () => {
   let AppWrapper;
   beforeAll(() => {
