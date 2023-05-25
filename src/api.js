@@ -11,8 +11,55 @@ import NProgress from "nprogress";
  * The Set will remove all duplicates from the array.
  */
 
+// export const extractLocations = (events) => {
+// var extractLocations = events.map((event) => event.location);
+// var locations = [...new Set(extractLocations)];
+// return locations;
+// };
+
+const removeQuery = () => {
+  // What this function does is check whether there’s a path, then build the URL with the current path (or build the URL without a path using window.history.pushState()).
+  if (window.history.pushState && window.location.pathname) {
+    var newurl =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState("", "", newurl);
+  } else {
+    newurl = window.location.protocol + "//" + window.location.host;
+    window.history.pushState("", "", newurl);
+  }
+};
+
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const { access_token } = await fetch(
+    "https://77ojswaww3.execute-api.eu-central-1.amazonaws.com/dev/api/token" +
+      "/" +
+      encodeCode
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => error);
+
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
+
+export const extractLocations = (events) => {
+  var extractLocations = events.map((event) => event.location);
+  var locations = [...new Set(extractLocations)];
+  return locations;
+};
+
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem("access_token");
+
+  // No Access Token Found in localStorage
+
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
@@ -30,6 +77,8 @@ export const getAccessToken = async () => {
   }
   return accessToken;
 };
+
+// Access Token Found in localStorage
 
 const checkToken = async (accessToken) => {
   const result = await fetch(
@@ -54,7 +103,8 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://77ojswaww3.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/" +
+      "https://77ojswaww3.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
+      "/" +
       token;
     const result = await axios.get(url);
     if (result.data) {
@@ -65,10 +115,4 @@ export const getEvents = async () => {
     NProgress.done();
     return result.data.events;
   }
-};
-
-export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
 };
