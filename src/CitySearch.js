@@ -24,9 +24,12 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
+        <h2 className="title">Events</h2>
+        <h3>Please selcet a city</h3>
         <input
           type="text"
           className="city"
+          placeholder="city search"
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => {
@@ -37,7 +40,6 @@ class CitySearch extends Component {
           className="suggestions"
           style={this.state.showSuggestions ? {} : { display: "none" }}
         >
-          {" "}
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
