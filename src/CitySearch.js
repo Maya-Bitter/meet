@@ -19,13 +19,28 @@ class CitySearch extends Component {
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
+    const suggestions = this.props.locations.filter((location) => {
+      return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+    });
+    if (suggestions.length === 0) {
+      this.setState({
+        query: value,
+        infoText: "no such city",
+      });
+    } else {
+      return this.setState({
+        query: value,
+        suggestions,
+        infoText: "",
+      });
+    }
   };
 
   render() {
     return (
       <div className="CitySearch">
         <h2 className="title">Events</h2>
-        <h3>Please selcet a city</h3>
+        <h3>Selcet a city</h3>
         <input
           type="text"
           className="city"
