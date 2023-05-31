@@ -54,7 +54,6 @@ describe("<CitySearch /> component", () => {
     expect(CitySearchWrapper.find(".suggestions li")).toHaveLength(
       suggestions.length + 1
     );
-    console.log(CitySearchWrapper.debug());
     for (let i = 0; i < suggestions.length; i += 1) {
       expect(CitySearchWrapper.find(".suggestions li").at(i).text()).toBe(
         suggestions[i]
