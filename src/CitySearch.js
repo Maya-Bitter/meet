@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class CitySearch extends Component {
   state = {
-    query: "",
+    query: "all",
     suggestions: [],
     showSuggestions: undefined,
   };
@@ -13,7 +13,7 @@ class CitySearch extends Component {
       showSuggestions: false,
     });
 
-    this.props.updateEvents(suggestion);
+    this.props.updateEvents(suggestion, null);
   };
 
   handleInputChanged = (event) => {
