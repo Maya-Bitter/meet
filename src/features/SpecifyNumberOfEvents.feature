@@ -1,6 +1,6 @@
 Feature: specify number of events
 
-scenariowhen user hasn’t specified a number, 32 is the default number
+scenario: when user hasn’t specified a number, 32 is the default number
 Given: the app is loaded 
 When: the user hasn’t specified the number of events
 Then: list of 32 events will be shown
