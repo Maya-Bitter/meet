@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { loadFeature, defineFeature } from "jest-cucumber";
 import { mount } from "enzyme";
 import App from "../App";
