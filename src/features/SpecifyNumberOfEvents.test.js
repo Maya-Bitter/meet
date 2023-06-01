@@ -15,7 +15,6 @@ defineFeature(feature, (test) => {
     given("the app is loaded", () => {});
 
     let AppWrapper;
-
     when("the user has not specified the number of events", () => {
       AppWrapper = mount(<App />);
     });
@@ -39,7 +38,7 @@ defineFeature(feature, (test) => {
 
     when("the user specifies the number of events to be loaded", () => {
       const numberOfEvents = { target: { value: 20 } };
-      AppWrapper.find(".numberOfEvents").simulate("change", numberOfEvents);
+      AppWrapper.find("#number-of-events").simulate("change", numberOfEvents);
     });
 
     then(
