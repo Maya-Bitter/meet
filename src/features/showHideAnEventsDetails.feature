@@ -2,7 +2,6 @@ Feature: show/hide an event's details
 
 scenario: an event element is collapsed by default
 Given: the app is loaded
-When: the user should see a list of all upcoming events
 Then: the user should NOT see the "more details" information of the events
 
 scenario: user can expand an event to see its details

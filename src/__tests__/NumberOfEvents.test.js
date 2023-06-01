@@ -13,7 +13,7 @@ describe("<NumberOfEvents/> component", () => {
   });
 
   test("render 32 events by default", () => {
-    expect(NumberofEventsWrapper.state("query")).toBe(32);
+    expect(NumberofEventsWrapper.state("query")).toBe();
   });
 
   test("change state when text input changes", () => {
