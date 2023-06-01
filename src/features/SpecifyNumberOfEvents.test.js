@@ -12,7 +12,7 @@ defineFeature(feature, (test) => {
     when,
     then,
   }) => {
-    given("the app is loaded ", () => {});
+    given("the app is loaded", () => {});
 
     let AppWrapper;
 

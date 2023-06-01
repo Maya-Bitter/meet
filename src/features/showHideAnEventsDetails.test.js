@@ -14,17 +14,19 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    when(
-      'the user should NOT see the "more details" information of the events',
+    when("the user should see a list of all upcoming events", () => {
+      AppWrapper.update();
+      expect(AppWrapper.find(".Event")).toHaveLength(mockData.length);
+    });
+
+    then(
+      "the user should not see the more details information of the events",
       () => {
-        AppWrapper.update();
-        expect(AppWrapper.find(".Event")).toHaveLength(mockData.length);
+        expect(AppWrapper.find(".Event.collapsed")).toHaveLength(
+          mockData.length
+        );
       }
     );
-
-    then("the event’s details should be collapsed by default", () => {
-      expect(AppWrapper.find(".Event.collapsed")).toHaveLength(mockData.length);
-    });
   });
 
   test("User can expand an event to see its details.", ({
@@ -37,7 +39,7 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    when("the user clicks on the “show details” of an event", () => {
+    when("the user clicks on the show details of an event", () => {
       AppWrapper.update();
       AppWrapper.find(".show-details").at(0).simulate("click");
     });
@@ -62,7 +64,7 @@ defineFeature(feature, (test) => {
       //EventWrapper.state({ collapsed: false });
     });
 
-    when("the user clicks on the “hide details” button of the event", () => {
+    when("the user clicks on the hide details button of the event", () => {
       EventWrapper.find(".hide-details").at(0).simulate("click");
     });
 
