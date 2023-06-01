@@ -7,16 +7,16 @@ import { mount } from "enzyme";
 const feature = loadFeature("./src/features/specifyNumberOfEvents.feature");
 
 defineFeature(feature, (test) => {
-  test("when user hasn’t specified a number, 32 is the default number", ({
+  test("when user has not specified a number, 32 is the default number", ({
     given,
     when,
     then,
   }) => {
-    given("the app is loaded", () => {});
+    given("the app is loaded ", () => {});
 
     let AppWrapper;
 
-    when("the user hasn’t specified the number of events", () => {
+    when("the user has not specified the number of events", () => {
       AppWrapper = mount(<App />);
     });
 
@@ -38,7 +38,7 @@ defineFeature(feature, (test) => {
     });
 
     when("the user specifies the number of events to be loaded", () => {
-      const numberOfEvents = { target: { value: 13 } };
+      const numberOfEvents = { target: { value: 20 } };
       AppWrapper.find(".numberOfEvents").simulate("change", numberOfEvents);
     });
 
@@ -46,8 +46,8 @@ defineFeature(feature, (test) => {
       "list with the specified number of events is served to the user",
       () => {
         const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-        NumberOfEventsWrapper.setState({ numberOfEvents: 13 });
-        expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(13);
+        NumberOfEventsWrapper.setState({ numberOfEvents: 20 });
+        expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(20);
       }
     );
   });
