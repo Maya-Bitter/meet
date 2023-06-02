@@ -7,7 +7,7 @@ import { mount } from "enzyme";
 const feature = loadFeature("./src/features/specifyNumberOfEvents.feature");
 
 defineFeature(feature, (test) => {
-  test("when user has not specified a number, 32 is the default number", ({
+  test("When user has not specified a number, 32 is the default number", ({
     given,
     when,
     then,
@@ -25,7 +25,7 @@ defineFeature(feature, (test) => {
     });
   });
 
-  test("user can change the number of events they want to see", ({
+  test("User can change the number of events they want to see", ({
     given,
     when,
     then,

@@ -1,6 +1,6 @@
 import { loadFeature, defineFeature } from "jest-cucumber";
-import { mount, shallow } from "enzyme";
 import React from "react";
+import { mount, shallow } from "enzyme";
 import App from "../App";
 import Event from "../Event";
 import { mockData } from "../mock-data";
@@ -8,7 +8,7 @@ import { mockData } from "../mock-data";
 const feature = loadFeature("./src/features/showHideAnEventsDetails.feature");
 
 defineFeature(feature, (test) => {
-  test("an event element is collapsed by default", ({ given, when, then }) => {
+  test("An event element is collapsed by default", ({ given, when, then }) => {
     let AppWrapper;
     given("the app is loaded", () => {
       AppWrapper = mount(<App />);
@@ -29,7 +29,7 @@ defineFeature(feature, (test) => {
     );
   });
 
-  test("User can expand an event to see its details.", ({
+  test("User can expand an event to see its details", ({
     given,
     when,
     then,
@@ -39,7 +39,7 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    when("the user clicks on the show details of an event", () => {
+    when("the user clicks on the “show details“ of an event", () => {
       AppWrapper.update();
       AppWrapper.find(".show-details").at(0).simulate("click");
     });
@@ -52,7 +52,7 @@ defineFeature(feature, (test) => {
     });
   });
 
-  test("User can collapse an event to hide its details.", ({
+  test("User can collapse an event to hide its details", ({
     given,
     when,
     then,
@@ -64,7 +64,7 @@ defineFeature(feature, (test) => {
       //EventWrapper.state({ collapsed: false });
     });
 
-    when("the user clicks on the hide details button of the event", () => {
+    when("the user clicks on the “hide details“ button of the event", () => {
       EventWrapper.find(".hide-details").at(0).simulate("click");
     });
 
