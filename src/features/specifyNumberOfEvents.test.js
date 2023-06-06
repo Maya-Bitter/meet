@@ -18,9 +18,11 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    when("the user has not specified the number of events", () => {});
+    when("the user has not specified the number of events", () => {
+      AppWrapper = mount(<App />);
+    });
 
-    then(/^list of (\d+) events will be shown$/, (arg0) => {
+    then("the default number of events displayed should be 32", () => {
       AppWrapper.update();
       expect(AppWrapper.find(".event")).toHaveLength(32);
     });
