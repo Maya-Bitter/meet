@@ -11,7 +11,9 @@ When the user clicks on the “show details“ of an event
 Then the event is expanded and shows details
 
 Scenario: User can collapse an event to hide its details
-Given specific event is being expanded with its details
+
+Given the user should see a list of all upcoming events
+And the user clicks on the “show details“ of an event
 When the user clicks on the “hide details“ button of the event
 Then the details of the event are hidden
 
