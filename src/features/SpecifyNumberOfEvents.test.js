@@ -12,16 +12,17 @@ defineFeature(feature, (test) => {
     when,
     then,
   }) => {
-    given("the app is loaded", () => {});
-
     let AppWrapper;
-    when("the user has not specified the number of events", () => {
+
+    given("the app is loaded", () => {
       AppWrapper = mount(<App />);
     });
 
-    then("list of 32 events will be shown", () => {
+    when("the user has not specified the number of events", () => {});
+
+    then(/^list of (\d+) events will be shown$/, (arg0) => {
       AppWrapper.update();
-      expect(AppWrapper.find(".event").length).toBeLessThanOrEqual(32);
+      expect(AppWrapper.find(".event")).toHaveLength(32);
     });
   });
 
