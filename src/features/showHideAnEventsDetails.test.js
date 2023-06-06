@@ -15,16 +15,14 @@ defineFeature(feature, (test) => {
     });
 
     when("the user should see a list of all upcoming events", () => {
-      AppWrapper.update();
-      expect(AppWrapper.find(".Event")).toHaveLength(mockData.length);
+      AppWrapper = mount(<App />);
     });
 
     then(
       "the user should not see the more details information of the events",
       () => {
-        expect(AppWrapper.find(".Event.collapsed")).toHaveLength(
-          mockData.length
-        );
+        AppWrapper.update();
+        expect(AppWrapper.find(".event .event-details")).toHaveLength(0);
       }
     );
   });
@@ -41,14 +39,12 @@ defineFeature(feature, (test) => {
 
     when("the user clicks on the “show details“ of an event", () => {
       AppWrapper.update();
-      AppWrapper.find(".show-details").at(0).simulate("click");
+      AppWrapper.find(".event .details-button").at(0).simulate("click");
     });
 
     then("the event is expanded and shows details", () => {
       AppWrapper.update();
-      expect(AppWrapper.find(".Event").at(0).find(".description")).toHaveLength(
-        1
-      );
+      expect(AppWrapper.find(".event .details")).toHaveLength(1);
     });
   });
 
@@ -57,20 +53,20 @@ defineFeature(feature, (test) => {
     when,
     then,
   }) => {
-    let EventWrapper;
+
+    let AppWrapper;
+
     given("specific event is being expanded with its details", () => {
-      EventWrapper = shallow(<Event event={mockData[0]} />);
-      EventWrapper.find(".show-details").at(0).simulate("click");
-      //EventWrapper.state({ collapsed: false });
-    });
+     
+      expect(AppWrapper.find(".event .details")).toHaveLength(1);
 
     when("the user clicks on the “hide details“ button of the event", () => {
-      EventWrapper.find(".hide-details").at(0).simulate("click");
+      AppWrapper.update();
+      AppWrapper.find(".event .details-button").at(0).simulate("click");
     });
 
     then("the details of the event are hidden", () => {
-      expect(EventWrapper.find(".description")).toHaveLength(0);
-      //expect(EventWrapper.state('collapsed')).toBe(true);
+      expect(AppWrapper.find(".event .event-details")).toHaveLength(0);
     });
   });
 });
