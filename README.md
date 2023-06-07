@@ -2,7 +2,7 @@
 
 ### **Contents**
 
-App link [meet](https://maya-bitter.github.io/meet/)
+[App link meet](https://maya-bitter.github.io/meet/)
 
 [Objective](#Objective)
 
