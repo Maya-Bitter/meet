@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ErrorAlert } from "./Alert";
 
 class NumberOfEvents extends Component {
   state = {
@@ -21,8 +22,8 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        {this.state.errorMsg ? (
-          <span id="errormsg">{this.state.errorMsg}</span>
+        {this.state.ErrorAlert ? (
+          <span id="errorMsg">{this.state.errorMsg}</span>
         ) : (
           ""
         )}
@@ -35,6 +36,7 @@ class NumberOfEvents extends Component {
           value={this.state.query}
           onChange={this.handleInputChanged}
         />
+        <ErrorAlert className="errorMsg" text={this.state.errorMsg} />
       </div>
     );
   }
