@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from "./service-worker";
 import * as atatus from "atatus-js";
 
 atatus.config("43bf457131694a0eaf19f0fbb1a1c547").install();
@@ -26,4 +26,4 @@ serviceWorker.register();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
