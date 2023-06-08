@@ -13,10 +13,13 @@ class NumberOfEvents extends Component {
       this.setState({
         errorMsg: "Please set number of events between 1 and 32!",
       });
-      return;
+    } else {
+      this.setState({
+        errorMsg: "",
+      });
+      this.setState({ query: value });
+      this.props.updateEvents(null, value);
     }
-    this.setState({ query: value });
-    this.props.updateEvents(null, value);
   };
 
   render() {
