@@ -32,18 +32,17 @@ class App extends Component {
     }
   }
 
-  // old code //
-  //componentDidMount() {
-  //this.mounted = true;
-  //getEvents().then((events) => {
-  //  if (this.mounted) {
-  //    this.setState({
-  //      events: events.slice(0, this.state.NumberOfEvents),
-  //      locations: extractLocations(events),
-  //    });
-  //  }
-  //});
-  //}
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
+    return data;
+  };
 
   componentWillUnmount() {
     this.mounted = false;
