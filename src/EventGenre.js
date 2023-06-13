@@ -6,7 +6,7 @@ const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(() => getData());
+    getData();
   }, [events]);
 
   const getData = () => {
@@ -17,6 +17,7 @@ const EventGenre = ({ events }) => {
       ).length;
       return { name: genre, value };
     });
+    setData(data);
     return data;
   };
 
@@ -24,7 +25,7 @@ const EventGenre = ({ events }) => {
     <ResponsiveContainer height={400}>
       <PieChart width={400} height={400}>
         <Pie
-          data={getData}
+          data={data}
           cx={200}
           cy={200}
           labelLine={false}

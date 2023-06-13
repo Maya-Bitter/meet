@@ -24,6 +24,7 @@ class App extends Component {
     locations: [],
     NumberOfEvents: 32,
     showWelcomeScreen: undefined,
+    selectedLocation: "all",
   };
 
   async componentDidMount() {
@@ -32,8 +33,11 @@ class App extends Component {
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
-    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    if ((code || isTokenValid) && this.mounted) {
+    const isLocal = window.location.href.startsWith("http://localhost")
+      ? true
+      : code || isTokenValid;
+    this.setState({ showWelcomeScreen: !isLocal });
+    if (isLocal && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({ events, locations: extractLocations(events) });
@@ -58,20 +62,34 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location, eventCount) => {
-    getEvents().then((events) => {
-      let locationEvents =
-        location === null || location === "all"
-          ? events
-          : events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents.slice(
-          0,
-          eventCount || this.state.NumberOfEvents
-        ),
-        NumberOfEvents: eventCount || this.state.NumberOfEvents,
+  // Function updates events array according to chosen city
+  updateEvents = (location, inputNumber) => {
+    const { NumberOfEvents, selectedLocation } = this.state;
+    if (location) {
+      getEvents().then((events) => {
+        const locationEvents =
+          location === "all"
+            ? events
+            : events.filter((event) => event.location === location);
+        const eventsToShow = locationEvents.slice(0, NumberOfEvents);
+        this.setState({
+          events: eventsToShow,
+          selectedLocation: location,
+        });
       });
-    });
+    } else {
+      getEvents().then((events) => {
+        const locationEvents =
+          selectedLocation === "all"
+            ? events
+            : events.filter((event) => event.location === selectedLocation);
+        const eventsToShow = locationEvents.slice(0, inputNumber);
+        this.setState({
+          events: eventsToShow,
+          NumberOfEvents: inputNumber,
+        });
+      });
+    }
   };
 
   render() {
@@ -94,7 +112,7 @@ class App extends Component {
 
         <div className="data-vis-wrapper">
           <EventGenre events={this.state.events} />
-
+          {/* or should it be {events} */}
           <ResponsiveContainer height={400}>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <CartesianGrid />

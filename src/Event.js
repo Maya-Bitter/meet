@@ -24,7 +24,7 @@ class Event extends Component {
           <>
             <div className="details">
               <h3 className="about">About event:</h3>
-              <a className="link" href={event.htmlLink}>
+              <a className="link" href={event.htmlLink} target="_blank">
                 See details on Google Calendar
               </a>
               <p className="description">{event.description}</p>
