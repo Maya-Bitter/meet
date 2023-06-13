@@ -21,7 +21,7 @@ const EventGenre = ({ events }) => {
     return data;
   };
 
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#85D2DB"];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#ff0000"];
 
   return (
     <ResponsiveContainer height={400}>
