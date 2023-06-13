@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+//import React, { PureComponent } from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 import React, { useEffect, useState } from "react";
 
